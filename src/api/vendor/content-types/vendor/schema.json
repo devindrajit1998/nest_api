@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendors",
+  "info": {
+    "singularName": "vendor",
+    "pluralName": "vendors",
+    "displayName": "vendor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "vendor"
+    },
+    "age": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "decimal",
+      "max": 5,
+      "min": 1
+    },
+    "details": {
+      "type": "text"
+    },
+    "address": {
+      "type": "text"
+    },
+    "contact": {
+      "type": "string"
+    }
+  }
+}
