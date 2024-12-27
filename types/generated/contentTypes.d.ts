@@ -450,7 +450,6 @@ export interface PluginUsersPermissionsUser
     displayName: 'User';
   };
   options: {
-    timestamps: true;
     draftAndPublish: false;
   };
   attributes: {
@@ -479,6 +478,16 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    firstname: Schema.Attribute.String;
+    lastname: Schema.Attribute.String;
+    mobile: Schema.Attribute.BigInteger;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    wishlist: Schema.Attribute.JSON;
+    cartData: Schema.Attribute.JSON;
+    order: Schema.Attribute.JSON;
+    cancelledorder: Schema.Attribute.JSON;
+    address: Schema.Attribute.JSON;
+    cards: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -643,8 +652,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     life: Schema.Attribute.String;
-    details: Schema.Attribute.Blocks;
-    moredetails: Schema.Attribute.Blocks;
     review: Schema.Attribute.JSON;
     image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
@@ -662,6 +669,24 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::subcategory.subcategory'
     >;
+    desc: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjY4Nzk5OTksImp0aSI6IjZlNTg0OTViLTE4MjUtNDc3Ny05N2EzLTNiMDZkYzZlZmExYyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjNjZjJhNWMzIn0.M1LpymvePpPvp1zhbEA37w_3RM9ynuVknI1H_YSoGW3SXXBNX4SFNY7CbhAu7yDlQcSL69zE3kd8T2aelpzIPw';
+        }
+      >;
+    moredetails: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjY4Nzk5OTksImp0aSI6IjZlNTg0OTViLTE4MjUtNDc3Ny05N2EzLTNiMDZkYzZlZmExYyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjNjZjJhNWMzIn0.M1LpymvePpPvp1zhbEA37w_3RM9ynuVknI1H_YSoGW3SXXBNX4SFNY7CbhAu7yDlQcSL69zE3kd8T2aelpzIPw';
+          preset: 'standard';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -714,6 +739,7 @@ export interface ApiVendorVendor extends Struct.CollectionTypeSchema {
     singularName: 'vendor';
     pluralName: 'vendors';
     displayName: 'vendor';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -732,7 +758,8 @@ export interface ApiVendorVendor extends Struct.CollectionTypeSchema {
       >;
     details: Schema.Attribute.Text;
     address: Schema.Attribute.Text;
-    contact: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    contact: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

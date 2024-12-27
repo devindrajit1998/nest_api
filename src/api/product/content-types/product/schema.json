@@ -21,12 +21,6 @@
     "life": {
       "type": "string"
     },
-    "details": {
-      "type": "blocks"
-    },
-    "moredetails": {
-      "type": "blocks"
-    },
     "review": {
       "type": "json"
     },
@@ -73,6 +67,24 @@
       "relation": "manyToOne",
       "target": "api::subcategory.subcategory",
       "inversedBy": "products"
+    },
+    "desc": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard",
+        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjY4Nzk5OTksImp0aSI6IjZlNTg0OTViLTE4MjUtNDc3Ny05N2EzLTNiMDZkYzZlZmExYyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjNjZjJhNWMzIn0.M1LpymvePpPvp1zhbEA37w_3RM9ynuVknI1H_YSoGW3SXXBNX4SFNY7CbhAu7yDlQcSL69zE3kd8T2aelpzIPw"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "moredetails": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjY4Nzk5OTksImp0aSI6IjZlNTg0OTViLTE4MjUtNDc3Ny05N2EzLTNiMDZkYzZlZmExYyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjNjZjJhNWMzIn0.M1LpymvePpPvp1zhbEA37w_3RM9ynuVknI1H_YSoGW3SXXBNX4SFNY7CbhAu7yDlQcSL69zE3kd8T2aelpzIPw",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "vendor",
     "pluralName": "vendors",
-    "displayName": "vendor"
+    "displayName": "vendor",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,8 +35,18 @@
     "address": {
       "type": "text"
     },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
     "contact": {
-      "type": "string"
+      "type": "json"
     }
   }
 }
