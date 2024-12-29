@@ -1,4 +1,18 @@
-module.exports = ({env}) => ({
+module.exports = ({ env }) => ({
+  "users-permissions": {
+    config: {
+      register: {
+        allowedFields: [
+          "name",
+          "avatar",
+          "order",
+          "wishlist",
+          "address",
+          "cards",
+        ],
+      },
+    },
+  },
   upload: {
     config: {
       provider: "cloudinary",
@@ -13,4 +27,16 @@ module.exports = ({env}) => ({
       },
     },
   },
+  email: {
+    config: {
+      provider: "strapi-provider-email-resend",
+      providerOptions: {
+        apiKey: env("RESEND_API_KEY"),
+      },
+      settings: {
+        defaultFrom: "support@nestecommerece.shop",
+        defaultReplyTo: "indrajitghosh449@gmail.com",
+      },
+    },
+  }
 });
