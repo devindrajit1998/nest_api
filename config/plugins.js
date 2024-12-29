@@ -29,14 +29,19 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "strapi-provider-email-resend",
+      provider: "nodemailer",
       providerOptions: {
-        apiKey: env("RESEND_API_KEY"),
+        host: "smtp.gmail.com",
+        port: 587,
+        auth: {
+          user: "indrajitghosh449@gmail.com",
+          pass: "hkuu bdca esks tgbr",
+        },
       },
       settings: {
-        defaultFrom: "support@multikit.shop",
+        defaultFrom: "indrajitghosh449@gmail.com",
         defaultReplyTo: "indrajitghosh449@gmail.com",
       },
     },
-  }
+  },
 });
