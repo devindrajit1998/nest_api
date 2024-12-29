@@ -34,7 +34,7 @@ module.exports = ({ env }) => ({
         apiKey: env("RESEND_API_KEY"),
       },
       settings: {
-        defaultFrom: "support@nestecommerece.shop",
+        defaultFrom: "support@multikit.shop",
         defaultReplyTo: "indrajitghosh449@gmail.com",
       },
     },
